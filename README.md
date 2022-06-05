@@ -1,7 +1,7 @@
 ### SETUP
 Clone repository
 ```
-git clone git@github.com:mapuaptu/get-ranges.git
+git clone https://github.com/mapuaptu/get-ranges.git
 ```
 
 Navigate to project directory

@@ -14,7 +14,7 @@ const formatRange = (arr) => {
   return `${arr[0]} - ${arr[arr.length - 1]}`;
 };
 
-export const getRanges = (arr) => {
+module.exports =  getRanges = (arr) => {
   if (!isArray(arr) || !isPositiveNumbers(arr) || hasDuplicates(arr)) return '';
 
   const sorted = arr.sort(sortAsc);

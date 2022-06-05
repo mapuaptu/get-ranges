@@ -1,5 +1,7 @@
 const isArray = (arr) => Array.isArray(arr);
-const isPositiveNumbers = (arr) => arr.some((e) => typeof e !== 'number' || e <= 0);
+const isEmpty = (arr) => arr.length === 0;
+const isSafeInteger = (arr) => arr.every((e) => e <= Number.MAX_SAFE_INTEGER);
+const isPositiveNumbers = (arr) => arr.every((e) => typeof e === 'number' && e >= 0);
 const hasDuplicates = (arr) => (new Set(arr)).size !== arr.length;
 const sortAsc = (a, b) => {
   if (a > b) return 1;
@@ -7,6 +9,7 @@ const sortAsc = (a, b) => {
 
   return 0;
 };
+
 const formatRange = (arr) => {
   if (arr.length === 0) return '';
   if (arr.length === 1) return `${arr[0]}`;
@@ -14,8 +17,9 @@ const formatRange = (arr) => {
   return `${arr[0]} - ${arr[arr.length - 1]}`;
 };
 
-module.exports =  getRanges = (arr) => {
-  if (!isArray(arr) || !isPositiveNumbers(arr) || hasDuplicates(arr)) return '';
+const getRanges = (arr) => {
+  if (!isArray(arr) || isEmpty(arr) || !isSafeInteger(arr) ||
+    !isPositiveNumbers(arr) || hasDuplicates(arr)) return '';
 
   const sorted = arr.sort(sortAsc);
 
@@ -47,3 +51,5 @@ module.exports =  getRanges = (arr) => {
 
   return result;
 }
+
+module.exports = getRanges;

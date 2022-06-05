@@ -1,5 +1,8 @@
 const isArray = (arr) => Array.isArray(arr);
 const isEmpty = (arr) => arr.length === 0;
+// according to this https://stackoverflow.com/questions/36523233/javascript-increase-max-array-size
+// we can't create array bigger than 2**32 - 1 - node just throw error, so i think we not need test for this case
+// const safeArrayLength = (arr) => arr.length <= 2**32 - 1;
 const isSafeInteger = (arr) => arr.every((e) => e <= Number.MAX_SAFE_INTEGER);
 const isPositiveNumbers = (arr) => arr.every((e) => typeof e === 'number' && e >= 0);
 const hasDuplicates = (arr) => (new Set(arr)).size !== arr.length;

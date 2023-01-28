@@ -1,3 +1,4 @@
+
 const isArray = (arr) => Array.isArray(arr);
 const isEmpty = (arr) => arr.length === 0;
 // according to this https://stackoverflow.com/questions/36523233/javascript-increase-max-array-size
